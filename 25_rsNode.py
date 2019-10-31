@@ -14,8 +14,8 @@ class Solution:
             tmp.next=newhead.next
             newhead.next=tmp
         return [end, start]
-    def reverseKGroup(self, head, k):
-        if head==None:
+    def reverseKGroup(self, head: ListNode, k: int):
+        if head == None:
             return None
         nhead=ListNode(0)
         nhead.next=head
@@ -44,3 +44,7 @@ n4.next = n5
 
 x = Solution()
 ans = x.reverseKGroup(n1, 2)
+
+while ans:
+    print(ans.val)
+    ans = ans.next
