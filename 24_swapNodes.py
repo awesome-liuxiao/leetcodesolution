@@ -9,15 +9,17 @@ class Solution:
     def swapPairs(self, head: ListNode) -> ListNode:
         if not head or not head.next:
             return head
-        pre = new_head = ListNode(0)
-        while head and head.next:
-            tmp = head.next
-            head.next = tmp.next
-            tmp.next = head
-            pre.next = tmp
-            pre = head
-            head = head.next
-        return new_head.next
+        dummy = ListNode(0)
+        dummy.next = head
+        point = dummy
+        while point.next and point.next.next:
+            swap1 = point.next
+            swap2 = swap1.next
+            point.next = swap2
+            swap1.next = swap2.next
+            swap2.next = swap1
+            point = swap1
+        return dummy.next
 
 n1 = ListNode(1)
 n2 = ListNode(2)
