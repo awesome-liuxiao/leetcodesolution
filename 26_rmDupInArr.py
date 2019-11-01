@@ -2,7 +2,7 @@ from typing import List
 class Solution:
     def removeDuplicates(self, nums: List[int]) -> int:
         p1 = 0
-        p2 = 1 # two nested points
+        p2 = 1 # two nested pointers
         if len(nums) == 0:
             return 0
         if len(nums) == 1:
@@ -11,14 +11,14 @@ class Solution:
             # print("nums["+str(p1)+"]: "+ str(nums[p1])+", nums["+str(p2)+"]: "+str(nums[p2]))
             if nums[p1] == nums[p2]:
                 # print("popping")
-                nums.pop(p1)
+                nums.pop(p1) # two elements are same, pop first one, the pointers' positions dont change.
             else:
                 # print("moving")
                 p1 += 1
-                p2 += 1
+                p2 += 1 # moving two pointers to next two elements
             if p2 > len(nums)-1:
                 # print("breaking")
-                p2 = -1
+                p2 = -1 # already reached the boundary, end of while
             # print(nums)
         return len(nums)
 
