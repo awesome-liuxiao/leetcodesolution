@@ -4,25 +4,25 @@ class Solution:
             return 0
         needleLen = len(needle)
         haystackLen = len(haystack)
-        p = 0
+        p = 0 # a pointer to mark position
         res = -1
         checker = False
-        while haystackLen-p >= needleLen:
+        while haystackLen-p >= needleLen: # if the pointer reached the position where the remained length is less than the needleLen, end
             if haystack[p] == needle[0]:
-                for i in range(needleLen):
+                for i in range(needleLen): # if the element in the pointer's position matches the first element in needle, then check the rest
                     if haystack[i+p] == needle[i]:
                         checker = True
                     else:
                         checker = False
-                        break
+                        break # if even one element doesn't match in this round, break.
                     # print(p)
                     # print("haystack["+str(i+p)+"]: "+haystack[i+p]+", needle["+str(i)+"]: "+needle[i])
 
             if checker == True:
                 res = p
-                break
+                break # if this round all match, then break. no need to keep while-ing
             else:
-                p += 1
+                p += 1 # if not all match, move pointer to next position
         return res
 
 x = Solution()
