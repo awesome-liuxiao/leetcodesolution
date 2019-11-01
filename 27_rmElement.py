@@ -1,12 +1,12 @@
 from typing import List
 class Solution:
     def removeElement(self, nums: List[int], val: int) -> int:
-        p = 0
-        while p < len(nums):
+        p = 0 # a pointer to mark position
+        while p < len(nums): # if the pointer reached the boundary, end
             if nums[p] == val:
-                nums.pop(p)
+                nums.pop(p) # if same, pop out the element, the pointer's position doesn't change.
             else:
-                p += 1
+                p += 1 # if not same, then the pointer move to next element
         return len(nums)
 
 x = Solution()
