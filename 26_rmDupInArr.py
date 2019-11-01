@@ -2,7 +2,7 @@ from typing import List
 class Solution:
     def removeDuplicates(self, nums: List[int]) -> int:
         p1 = 0
-        p2 = 1
+        p2 = 1 # two nested points
         if len(nums) == 0:
             return 0
         if len(nums) == 1:
