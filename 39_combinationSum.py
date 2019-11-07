@@ -1,17 +1,21 @@
 from typing import List
 class Solution:
     def combinationSum(self, candidates:List[int], target:int) -> List[List[int]]:
+        candidates.sort()
         res = []
+
         def findDFS(candidates, target, start, out, res):
             if target < 0:
                 return
-            elif target == 0:
+            if target == 0:
                 res.append(out)
                 return
             for i in range(start, len(candidates)):
-                out.append(candidates[i])
-                findDFS(candidates, target - candidates[i], i, out, res)
-                out.pop(len(out)-1) # backtracking
+                if candidates[start] > target:
+                    return
+                findDFS(candidates, target - candidates[i], i, out+[candidates[i]], res)
+                # out.pop(len(out)-1) # backtracking
+
         findDFS(candidates, target, 0, [], res)
         # print(res)
         return res
