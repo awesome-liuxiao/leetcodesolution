@@ -5,7 +5,7 @@ class Solution:
         out = []
         self.dfs(nums,out,res)
 
-        print(res)
+        # print(res)
         return res
        
     def dfs(self, nums, out, res):
