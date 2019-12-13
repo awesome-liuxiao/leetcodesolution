@@ -34,7 +34,7 @@ class Solution:
                     res.append(matrix[i][left])
                     i -= 1
                 left += 1
-        # print(res)
+        print(res)
         return res
 
 x = Solution()
