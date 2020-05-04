@@ -42,3 +42,6 @@ X.canVisitAllRooms(rooms)
 
 rooms = [[1],[],[3],[2],[1]] #False
 X.canVisitAllRooms(rooms)
+
+rooms = [[2],[2],[1,1],[3]]
+X.canVisitAllRooms(rooms)
