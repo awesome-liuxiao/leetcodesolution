@@ -1,33 +1,20 @@
 from typing import List
 class Solution:
     def canVisitAllRooms(self, rooms: List[List[int]]) -> bool:
-        res = False
-        keys = []
-        roomNum = 0
-        if not rooms[0]:
-            return res
-        for room in rooms:
-            if not room:
-                roomNum += 1
-                continue
-            for key in room:
-                if (key not in keys) and (roomNum != key):
-                    keys.append(key)
-            roomNum += 1
-        keys.sort()
-        if keys[0] == 0:
-            del keys[0]
-        print(keys)
-        if :
-            pass
-        for i in range(1,len(rooms)):
-            if i == keys[i-1]:
-                res = True
-            else:
-                res = False
-                break
-        print(res)
-        return res
+        roomNum = len(rooms)
+        if not rooms:
+            return False
+        stack = rooms[0]
+        seen = set([0])
+
+        while stack:
+            key = stack.pop()
+            if key not in seen:
+                seen.add(key)
+                for nxt in rooms[key]:
+                    if nxt not in seen:
+                        stack.append(nxt)
+        return len(seen) == roomNum
 
 X = Solution()
 
