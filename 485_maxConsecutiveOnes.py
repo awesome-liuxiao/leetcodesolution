@@ -23,6 +23,8 @@ import random
 nums = []
 for i in range(10000):
     nums.append(random.choice([0,1]))
-print(nums)
-print(len(nums))
+#print(nums)
+#print(len(nums))
+nums = [1,0,1,1,0,0,1,1,0,1,1,1,1,0,1]
 X.findMaxConsecutiveOnes(nums)
+nums = [0,1]

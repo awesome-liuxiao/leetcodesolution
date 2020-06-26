@@ -8,7 +8,7 @@ class Solution:
             else:
                 num -= 1
                 steps += 1
-        # print(steps)
+        print(steps)
         return steps
 
 x = Solution()
@@ -22,8 +22,8 @@ x.numberOfSteps(num)
 num = 123
 x.numberOfSteps(num)
 
-num = 1
+num = 35
 x.numberOfSteps(num)
 
-num = 0
+num = 69
 x.numberOfSteps(num)
