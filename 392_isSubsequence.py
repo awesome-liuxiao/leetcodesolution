@@ -36,5 +36,4 @@ print(X.isSubsequence(s, t))
 #     s += random.choice(letters)
 # for i in range(pow(10,4)):
 #     t += random.choice(letters)
-# print(t)
 # print(X.isSubsequence(s, t))
