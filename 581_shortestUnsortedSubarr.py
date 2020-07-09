@@ -1,16 +1,14 @@
 from typing import List
 class Solution:
     def findUnsortedSubarray(self, nums: List[int]) -> int:
-        startIdx = -1
-        endIdx = len(nums)+1
+        endIdxList = []
         sortedNums = sorted(nums)
         for i in range(len(nums)):
-            if nums[i] <= sortedNums[i]:
-                endIdx = i
-            else:
-                if startIdx == -1:
-                    startIdx = i
-        print(f"startIdx: {startIdx}, endIdx: {endIdx}")
+            if nums[i] != sortedNums[i]:
+                endIdxList.append(i)
+        # print(f"endIdx: {endIdxList}")
+        # print(endIdxList[-1] - endIdxList[0] + 1)
+        return endIdxList[-1] - endIdxList[0] + 1
         
 X = Solution()
 
