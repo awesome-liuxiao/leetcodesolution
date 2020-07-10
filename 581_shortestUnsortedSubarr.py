@@ -8,6 +8,8 @@ class Solution:
                 endIdxList.append(i)
         # print(f"endIdx: {endIdxList}")
         # print(endIdxList[-1] - endIdxList[0] + 1)
+        if not endIdxList:
+            return 0
         return endIdxList[-1] - endIdxList[0] + 1
         
 X = Solution()
