@@ -4,7 +4,7 @@ class Solution:
         res = []
         for n in range(left, right+1):
             nStr = str(n)
-            if n == 0 or '0' in nStr:
+            if '0' in nStr:
                 continue
             isDividable = False
             for c in nStr:
